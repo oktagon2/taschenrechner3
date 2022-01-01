@@ -20,10 +20,11 @@ mainView.key8= document.getElementById( "key-8");
 mainView.key9= document.getElementById( "key-9");
 mainView.keyDivide= document.getElementById( "key-divide");
 mainView.keyMultiply= document.getElementById( "key-multiply");
-mainView.keySubstract= document.getElementById( "key-substract");
+mainView.keySubtract= document.getElementById( "key-subtract");
 mainView.keyAdd= document.getElementById( "key-add");
 mainView.keyPeriod= document.getElementById( "key-period");
 mainView.keyEqual= document.getElementById( "key-equal");
+mainView.keyC= document.getElementById( "key-c");
 
 mainView.key0.onclick= function() {
     mainViewModel.key0Pressed();
@@ -73,8 +74,8 @@ mainView.keyMultiply.onclick= function() {
     mainViewModel.keyMultiplyPressed();
 }
 
-mainView.keySubstract.onclick= function() {
-    mainViewModel.keySubstractPressed();
+mainView.keySubtract.onclick= function() {
+    mainViewModel.keySubtractPressed();
 }
 mainView.keyAdd.onclick= function() {
     mainViewModel.keyAddPressed();
@@ -85,4 +86,8 @@ mainView.keyPeriod.onclick= function() {
 mainView.keyEqual.onclick= function() {
     mainViewModel.keyCalculatePressed();
 }
+
+mainView.keyC.onclick= function() {
+    mainViewModel.keyCPressed();
+};
 

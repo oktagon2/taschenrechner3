@@ -35,4 +35,11 @@ class NumberComposer {
             this.beginCompose= false;
         }
     }
+
+    keyCPressed() {
+        if( !this.beginCompose)
+        {
+            this.newNumber( 0);
+        }
+    }
 }

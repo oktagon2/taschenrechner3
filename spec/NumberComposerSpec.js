@@ -83,4 +83,26 @@ describe( "NumberComposer", function() {
         numberComposer.numKeyPressed(9);
         expect( numberComposer.result).toEqual( 123.789);
     });
+    it( "should be able to clear the actual result", function() {
+        var numberComposer= new NumberComposer();
+        var initialNumber= 15;
+        numberComposer.newNumber( initialNumber);
+        expect( numberComposer.result).toEqual( initialNumber);
+        numberComposer.keyCPressed();
+        expect( numberComposer.result).toEqual( initialNumber);
+        numberComposer.numKeyPressed(1);
+        expect( numberComposer.result).toEqual( 1);
+        numberComposer.numKeyPressed(2);
+        expect( numberComposer.result).toEqual( 12);
+        numberComposer.numKeyPressed(3);
+        expect( numberComposer.result).toEqual( 123);
+        numberComposer.keyCPressed();
+        expect( numberComposer.result).toEqual( 0);
+        numberComposer.numKeyPressed(1);
+        expect( numberComposer.result).toEqual( 1);
+        numberComposer.numKeyPressed(2);
+        expect( numberComposer.result).toEqual( 12);
+        numberComposer.numKeyPressed(3);
+        expect( numberComposer.result).toEqual( 123);
+    });
 });

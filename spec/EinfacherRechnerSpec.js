@@ -65,4 +65,20 @@ describe( "EinfacherRechner", function() {
         einfacherRechner.calculate();
         expect( einfacherRechner.result).toEqual( 6);
     });
+    it("should be possible to change operation", function() {
+        var einfacherRechner= new EinfacherRechner();
+        einfacherRechner.newOperand( 2);
+        einfacherRechner.add();
+        expect( einfacherRechner.result).toEqual( 2);
+        einfacherRechner.multiply();
+        expect( einfacherRechner.result).toEqual( 2);
+        einfacherRechner.newOperand( 5);
+        einfacherRechner.add();
+        expect( einfacherRechner.result).toEqual( 10);
+        einfacherRechner.subtract();
+        expect( einfacherRechner.result).toEqual( 10);
+        einfacherRechner.newOperand( 3);
+        einfacherRechner.calculate();
+        expect( einfacherRechner.result).toEqual( 7);
+    });
 });

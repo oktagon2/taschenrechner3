@@ -87,8 +87,8 @@ class MainViewModel {
         this.keyOperatorPressed( () => { this.einfacherRechner.add(); });
     }
 
-    keySubstractPressed() {
-        this.keyOperatorPressed( () => { this.einfacherRechner.substract(); });
+    keySubtractPressed() {
+        this.keyOperatorPressed( () => { this.einfacherRechner.subtract(); });
     }
 
     keyMultiplyPressed() {
@@ -107,6 +107,14 @@ class MainViewModel {
         this.displayValue= this.einfacherRechner.result;
         this.composeNewNumber= true;
         this.newOperandAvailable= false;
+    }
+
+    keyCPressed() {
+        if( !this.composeNewNumber)
+        {
+            this.numberComposer.keyCPressed();
+            this.displayValue= this.numberComposer.result;
+        }
     }
 }
 
