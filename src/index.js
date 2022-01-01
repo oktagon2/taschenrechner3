@@ -25,6 +25,8 @@ mainView.keyAdd= document.getElementById( "key-add");
 mainView.keyPeriod= document.getElementById( "key-period");
 mainView.keyEqual= document.getElementById( "key-equal");
 mainView.keyC= document.getElementById( "key-c");
+mainView.sqr= document.getElementById( "key-sqr")
+mainView.sqrt= document.getElementById( "key-sqrt")
 
 mainView.key0.onclick= function() {
     mainViewModel.key0Pressed();
@@ -89,5 +91,13 @@ mainView.keyEqual.onclick= function() {
 
 mainView.keyC.onclick= function() {
     mainViewModel.keyCPressed();
+};
+
+mainView.sqr.onclick= function() {
+    mainViewModel.keySqrPressed();
+};
+
+mainView.sqrt.onclick= function() {
+    mainViewModel.keySqrtPressed();
 };
 

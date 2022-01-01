@@ -68,6 +68,10 @@ class MainViewModel {
     }
 
     keyPeriodPressed() {
+        if( this.composeNewNumber) {
+            this.composeNewNumber= false;
+            this.numberComposer.newNumber( 0);
+        }
         this.numberComposer.keyPeriodPressed();
         this.displayValue= this.numberComposer.result;
     }
@@ -115,6 +119,18 @@ class MainViewModel {
             this.numberComposer.keyCPressed();
             this.displayValue= this.numberComposer.result;
         }
+    }
+
+    keySqrPressed() {
+        this.numberComposer.newNumber( Math.pow( this.displayValue, 2));
+        this.displayValue= this.numberComposer.result;
+        this.newOperandAvailable= true;
+    }
+
+    keySqrtPressed() {
+        this.numberComposer.newNumber( Math.pow( this.displayValue, 0.5));
+        this.displayValue= this.numberComposer.result;
+        this.newOperandAvailable= true;
     }
 }
 
