@@ -42,15 +42,27 @@ describe( "EinfacherRechner", function() {
     it("should be able to multiply and divide numbers", function() {
         var einfacherRechner= new EinfacherRechner();
         einfacherRechner.newOperand( 5);
-        einfacherRechner.abc();
+        einfacherRechner.multiply();
         einfacherRechner.newOperand( 3);
         einfacherRechner.calculate();
         expect( einfacherRechner.result).toEqual( 15);
         einfacherRechner.newOperand( 21);
-        einfacherRechner.def();
+        einfacherRechner.divide();
         einfacherRechner.newOperand( 7);
         einfacherRechner.calculate();
         expect( einfacherRechner.result).toEqual( 3);
 
+    });
+
+    it("should be able to show Zwischenresultate", function() {
+        var einfacherRechner= new EinfacherRechner();
+        einfacherRechner.newOperand( 1);
+        einfacherRechner.add();
+        einfacherRechner.newOperand( 2);
+        einfacherRechner.add();
+        expect( einfacherRechner.result).toEqual( 3);
+        einfacherRechner.newOperand( 3);
+        einfacherRechner.calculate();
+        expect( einfacherRechner.result).toEqual( 6);
     });
 });
