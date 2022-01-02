@@ -8,7 +8,7 @@ class NumberComposer {
     }
 
     numKeyPressed( value) {
-        if( this.compositionLength< 6)
+        if( this.compositionLength< 12)
         {
             if( this.beginCompose) {
                 this.result= value;

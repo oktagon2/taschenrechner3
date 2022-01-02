@@ -5,17 +5,22 @@ class MainViewModel {
         this.newOperandAvailable= false;
     }
 
+    displayValueAsString() {
+        var ret= utilities.displayValueAsString( this._displayValue);
+        return ret;
+    }
+
     set displayValue( value) {
         this._displayValue= value;
+        this.displayValueText= this.displayValueAsString();
         if( this.mainView) {
-            this.mainView.display.innerText= this._displayValue.toString();
+            this.mainView.display.innerText= this.displayValueText;
         }
     }
 
     get displayValue() {
         return this._displayValue;
     }
-
 
     numKeyPressed( value) {
         if( this.composeNewNumber) {
